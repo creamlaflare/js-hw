@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+  /**
+   * Функция складывает два числа
+   * @param {number} num1 1-е число для сложения
+   * @param {number} num2 2-е число для сложения
+   * @returns {number} Cумма двух чисел
+   */
+  function sum(num1, num2) {
+    return (num1 + num2);
+  }
+
+  /**
+   * Функция вычитает два числа (большее из меньшего)
+   * @param {number} num1 1-е число для вычитания
+   * @param {number} num2 2-е число для вычитания
+   * @returns {number} Разность двух чисел (вычитание большего числа из меньшего)
+   */
+  function sub(num1, num2) {
+    if (num1 > num2)
+      return (num1 - num2);
+    else
+      return (num2 - num1);
+  }
+
+  /**
+   * Функция умножения двух чисел
+   * @param {number} num1 1-e число для умножения
+   * @param {number} num2 2-e число для умножения
+   * @returns {number} Произведение двух чисел
+   */
+  function multiply(num1, num2) {
+    return num1 * num2;
+  }
+
+  /**
+   * Функция деления двух чисел
+   * @param {number} num1 1-е число для деления
+   * @param {number} num2 2-е число для деления
+   * @returns {number} Частное двух чисел
+   */
+  function div(num1, num2) {
+    return num1 / num2;
+  }
+
+  /**
+   * Функция, выполняющая базовые математические операции
+   * @param {number} arg1 1-е число передаваемое функции
+   * @param {number} arg2 2-е число передаваемое функции
+   * @param {string} operation символ операции
+   * @returns {number}
+   */
+  function mathOperation(arg1, arg2, operation) {
+    if (operation === '+')
+      return sum(arg1, arg2);
+    else if (operation === '-')
+      return sub(arg1, arg2);
+    else if (operation === '*')
+      return multiply(arg1, arg2);
+    else if (operation === '/')
+      return div(arg1, arg2);
+    else
+      return NaN;
+  }
+
+  console.log(mathOperation(2,6,'+'));
+  console.log(mathOperation(2,6, '-'));
+  console.log(mathOperation(2,5, '*'));
+  console.log(mathOperation(10,3, '/'));
+  // Здесь пишем решение, данный комментарий необходимо стереть.
+</script>
+</body>
+</html>
